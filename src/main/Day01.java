@@ -1,28 +1,13 @@
 package main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Day01 extends BaseClass {
 
     public static void main(String[] args) {
-        Scanner inputScanner = getInputScanner();
-        assert inputScanner != null;
-        char[] chars = inputScanner.nextLine().toCharArray();
-        int firstSum = getFirstSum(chars);
-        int secondSum = getSecondSum(chars);
+        char[] input = getInput("input01.1.txt");
+        int firstSum = getFirstSum(input);
+        int secondSum = getSecondSum(input);
         print("Answer 1", firstSum);
         print("Answer 2", secondSum);
-    }
-
-    private static Scanner getInputScanner() {
-        try {
-            return new Scanner(new File(FILES_DIRECTORY + "input01.1.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
 
     private static int getFirstSum(char[] input) {
