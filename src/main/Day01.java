@@ -1,16 +1,10 @@
 package main;
 
-public class Day01 extends BaseClass {
+public class Day01 extends BaseDay<char[]> {
+    private char[] input = getInput();
 
-    public static void main(String[] args) {
-        char[] input = getInput("input01.1.txt");
-        int firstSum = getFirstSum(input);
-        int secondSum = getSecondSum(input);
-        print("Answer 1", firstSum);
-        print("Answer 2", secondSum);
-    }
-
-    private static int getFirstSum(char[] input) {
+    @Override
+    public int resultFirst() {
         int sum = 0;
         for (int i = 0; i < input.length; i++) {
             if (input[i] == input[(i + 1) % input.length]) {
@@ -20,7 +14,8 @@ public class Day01 extends BaseClass {
         return sum;
     }
 
-    private static int getSecondSum(char[] input) {
+    @Override
+    public int resultSecond() {
         int sum = 0;
         for (int i = 0; i < input.length; i++) {
             if (input[i] == input[(i + (input.length/2)) % input.length]) {
@@ -28,5 +23,10 @@ public class Day01 extends BaseClass {
             }
         }
         return sum;
+    }
+
+    @Override
+    char[] getInput() {
+        return FileReader.getInputChar("input01.txt");
     }
 }
