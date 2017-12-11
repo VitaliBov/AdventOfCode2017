@@ -11,6 +11,9 @@ public class App {
 
         Day03 day03 = new Day03();
         print(3, day03.resultFirst(), day03.resultSecond());
+
+        Day04 day04 = new Day04();
+        print(4, day04.resultFirst(), day04.resultSecond());
     }
 
     private static void print(int dayNumber, int inputFirst, int inputSecond) {
