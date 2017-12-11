@@ -8,6 +8,9 @@ public class App {
 
         Day02 day02 = new Day02();
         print(2, day02.resultFirst(), day02.resultSecond());
+
+        Day03 day03 = new Day03();
+        print(3, day03.resultFirst(), day03.resultSecond());
     }
 
     private static void print(int dayNumber, int inputFirst, int inputSecond) {
